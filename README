@@ -1,98 +1,50 @@
-Sistema de Gestão Interna – Old&Lux Rental Car
 
-📄 Descrição Geral
-O sistema foi desenvolvido como trabalho da disciplina PAV – Programação em Ambiente Visual, com o objetivo de simular a gestão interna de uma locadora fictícia chamada Old&Lux Rental Car, especializada em veículos antigos e de luxo.
+## Sistema de Gestão Interna – Old&Lux Rental Car
 
-A aplicação permite funcionalidades como:
+##### Este projeto é um sistema de gestão interna desenvolvido para a fictícia locadora de veículos **Old&Lux Rental Car**, especializada em automóveis antigos e luxuosos. Criado como parte da disciplina **PAV – Programação em Ambiente Visual**, o sistema permite a administração eficiente de veículos, reservas e clientes.
 
-Cadastro e gerenciamento de veículos.
-
-Registro de clientes.
-
+## 🚀 Tecnologias Utilizadas
 Controle de aluguéis e reservas.
 
-Consulta de informações via API.
+- Python 3.x  
+- FastAPI  
+- Uvicorn  
+- PostgreSql
+- Outras dependências especificadas em `requirements.txt`
 
-👤 Autor
-Nome: Gabriel João Carius Cantú
-
-Disciplina: Programação em Ambiente Visual
-
-Data de Entrega: 28/04/2025
-
-🧰 Tecnologias Utilizadas
-Linguagem: Python 3.x
-
-Framework: FastAPI
-
-Servidor ASGI: Uvicorn
-
-Banco de Dados: PostgreSql
-
-Ambiente virtual: venv
-
-⚙️ Configuração do Ambiente
-1. Criar o Ambiente Virtual
+## ⚙️ Configuração do Ambiente
+### 1. Criar o Ambiente Virtual
 No terminal, execute:
 
-python3 -m venv venv
-2. Ativar o Ambiente Virtual (Windows)
+`python3 -m venv venv`
 
-venv\Scripts\activate
+### 2. Ativar o Ambiente Virtual (Windows)
 
-⚠️ Se houver erro de permissão, use:
+`venv\Scripts\activate`
 
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
-Em seguida, ative novamente:
+#### ⚠️ Se houver erro de permissão, use:
 
-venv\Scripts\activate
-3. Instalar as Dependências
-Com o ambiente virtual ativo, rode:
+`Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process`
+#### Em seguida, ative novamente:
 
-pip install -r requirements.txt
+`venv\Scripts\activate`
 
-▶️ Execução do Projeto
-Passos para rodar o servidor:
-Acesse a pasta onde está o código:
+### 3. Instalar as Dependências
+#### Com o ambiente virtual ativado, execute:
 
-cd code
-Inicie o servidor com Uvicorn:
+`pip install -r requirements.txt`
 
-uvicorn src.__init__:app --reload
-Acesso via navegador:
-API Root: http://127.0.0.1:8000
+### 4. Como Executar o Projeto
+#### Navegue até a pasta do código-fonte:
 
-Documentação Swagger (interativa): http://127.0.0.1:8000/docs
+`cd code`
 
-Documentação Redoc: http://127.0.0.1:8000/redoc
+#### Inicie o servidor com Uvicorn:
 
-📁 Estrutura Esperada do Projeto (Exemplo)
-plaintext
-Copiar
-Editar
-OldLuxRental/
-├── code/
-│   ├── src/
-│   │   ├── __init__.py
-│   │   ├── models/        # Modelos de dados
-│   │   ├── routes/        # Rotas da API
-│   │   └── services/      # Lógica de negócio
-├── requirements.txt
-├── README.md
-└── venv/
+`uvicorn src.__init__:app --reload`
+#### Acesso via navegador:
+#### API Root: 
+`http://127.0.0.1:8000`
 
-🛠️ Possíveis Melhorias Futuras
-Interface gráfica para administração (web ou desktop).
-
-Integração com sistemas de pagamento.
-
-Autenticação e controle de acesso.
-
-Relatórios gerenciais (PDF/Excel).
-
-Testes automatizados (pytest).
-
-📝 Observações Finais
-Este projeto tem fins estritamente educacionais e foi desenvolvido como parte da avaliação da disciplina Programação em Ambiente Visual.
-Não é destinado para uso comercial ou em produção real.
-
+#### Documentação Swagger (interativa): 
+`http://127.0.0.1:8000/docs`
