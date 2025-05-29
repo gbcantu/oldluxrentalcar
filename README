@@ -1,0 +1,31 @@
+Configuração do Ambiente
+1. Criar Ambiente Virtual
+No terminal, execute:
+
+python3 -m venv venv
+
+
+2. Ativar Ambiente Virtual (Windows):
+
+venv\Scripts\activate
+Observação: Caso ocorra um erro de permissão, execute o seguinte comando:
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+Depois, ative novamente o ambiente virtual:
+
+venv\Scripts\activate
+
+
+3. Instalar Dependências
+Com o ambiente virtual ativado, execute:
+
+pip install -r requirements.txt
+
+
+4. Executando o Projeto
+Navegue até a pasta code:
+
+cd code
+Execute o servidor com Uvicorn:
+
+uvicorn src.__init__:app --reload
