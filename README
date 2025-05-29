@@ -1,31 +1,75 @@
-Configuração do Ambiente
-1. Criar Ambiente Virtual
+# Sistema de Gestão Interna – Old&Lux Rental Car
+
+Este projeto é um sistema de gestão interna desenvolvido para a fictícia locadora de veículos **Old&Lux Rental Car**, especializada em automóveis antigos e luxuosos. Criado como parte da disciplina **PAV – Programação em Ambiente Visual**, o sistema permite a administração eficiente de veículos, reservas e clientes.
+
+## 👤 Autor
+
+- **Nome:** Gabriel João Carius Cantú  
+- **Disciplina:** PAV – Programação em Ambiente Visual  
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- Python 3.x  
+- FastAPI  
+- Uvicorn  
+- PostgreSql
+- Outras dependências especificadas em `requirements.txt`
+
+---
+
+## ⚙️ Como Configurar o Ambiente
+
+### 1. Criar Ambiente Virtual
+
 No terminal, execute:
 
 python3 -m venv venv
 
-
-2. Ativar Ambiente Virtual (Windows):
+### 2. Ativar o Ambiente Virtual (Windows)
 
 venv\Scripts\activate
-Observação: Caso ocorra um erro de permissão, execute o seguinte comando:
+
+Observação: Caso ocorra um erro de permissão, execute:
 
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
-Depois, ative novamente o ambiente virtual:
 
+Depois, ative novamente o ambiente virtual:
 venv\Scripts\activate
 
-
-3. Instalar Dependências
+### 3. Instalar as Dependências
 Com o ambiente virtual ativado, execute:
 
 pip install -r requirements.txt
 
-
-4. Executando o Projeto
-Navegue até a pasta code:
+### ▶️ Como Executar o Projeto
+Navegue até a pasta do código-fonte:
 
 cd code
 Execute o servidor com Uvicorn:
 
 uvicorn src.__init__:app --reload
+
+Acesse a aplicação no navegador:
+
+http://127.0.0.1:8000
+
+A documentação interativa da API estará disponível em:
+http://127.0.0.1:8000/docs
+
+📂 Estrutura do Projeto (Exemplo)
+
+OldLuxRental/
+├── code/
+│   ├── src/
+│   │   ├── __init__.py
+│   │   ├── models/
+│   │   ├── routes/
+│   │   └── services/
+├── requirements.txt
+├── README.md
+└── venv/
+
+📝 Licença
+Este projeto é de caráter educacional e não possui fins comerciais. Desenvolvido exclusivamente para fins acadêmicos na disciplina de Programação em Ambiente Visual.
