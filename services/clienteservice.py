@@ -17,6 +17,8 @@ def getCliente(cliente_id):
 def addCliente(nome: str, cpf: str, email: str, telefone: str) -> Cliente:
     if not nome:
         raise ValidationError("Nome não pode ser vazio.")
+    if not cpf:
+        raise ValidationError("Cpf não pode ser vazio.")
     
     return add_cliente(nome=nome, cpf=cpf, email=email, telefone=telefone)
 
