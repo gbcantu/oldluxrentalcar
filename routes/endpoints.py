@@ -18,6 +18,17 @@ from src.controller.veiculocontroller import (
     get_veiculo_list,
     post_veiculo_item,
 )
+from src.controller.agendamentocontroller import (
+    AgendamentoResponseSchema,
+    AgendamentoRequestSchema,
+    get_agendamento_item,
+    put_agendamento_item,
+    delete_agendamento_item,
+    get_agendamento_list,
+    post_agendamento_item,
+    get_agendamento_by_veiculo_id,
+    get_agendamento_by_cliente_id
+)
 from src.controller.documentoveiculocontroller import (
     DocumentoveiculoResponseSchema,
     DocumentoveiculoRequestSchema,
@@ -95,6 +106,38 @@ def update_veiculo(veiculo_id: int, data: VeiculoRequestSchema):
 @router.delete("/veiculos/{veiculo_id}", response_model=VeiculoResponseSchema)
 def delete_veiculo(veiculo_id: int = Path(..., gt=0)):
     return delete_veiculo_item(veiculo_id)
+
+# ==============================
+# ENDPOINTS AGENDAMENTO
+# ==============================
+
+@router.get("/agendamentos/", response_model=List[AgendamentoResponseSchema])
+def list_agendamentos():
+    return get_agendamento_list()
+
+@router.post("/agendamentos/", response_model=AgendamentoResponseSchema, status_code=201)
+def create_agendamento(data: AgendamentoRequestSchema):
+    return post_agendamento_item(data)
+
+@router.get("/agendamentos/{agendamento_id}", response_model=AgendamentoResponseSchema)
+def get_agendamento(agendamento_id: int = Path(..., gt=0)):
+    return get_agendamento_item(agendamento_id)
+
+@router.get("/agendamentos/veiculo/{veiculo_id}", response_model=List[AgendamentoResponseSchema])
+def list_agendamentos_by_veiculo(veiculo_id: int = Path(..., gt=0)):
+    return get_agendamento_by_veiculo_id(veiculo_id)
+
+@router.get("/agendamentos/cliente/{cliente_id}", response_model=List[AgendamentoResponseSchema])
+def list_agendamentos_by_cliente(cliente_id: int = Path(..., gt=0)):
+    return get_agendamento_by_cliente_id(cliente_id)
+
+@router.put("/agendamentos/{agendamento_id}", response_model=AgendamentoResponseSchema, status_code=201)
+def update_agendamento(agendamento_id: int, data: AgendamentoRequestSchema):
+    return put_agendamento_item(agendamento_id, data)
+
+@router.delete("/agendamentos/{agendamento_id}", response_model=AgendamentoResponseSchema)
+def delete_agendamento(agendamento_id: int = Path(..., gt=0)):
+    return delete_agendamento_item(agendamento_id)
 
 # ==============================
 # ENDPOINTS DOCUMENTO VEICULOS

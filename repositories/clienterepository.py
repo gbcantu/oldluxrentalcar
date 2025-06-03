@@ -16,6 +16,10 @@ def get_cliente(cliente_id: int) -> Cliente:
     
     return cliente
 
+def get_cliente_by_cpf(cpf: str) -> Cliente:
+    db: Session = next(get_db())
+    return db.query(Cliente).filter(Cliente.cpf == cpf).first()
+
 def add_cliente(nome: str, cpf: str, email: str, telefone: str) -> Cliente:
     db: Session = next(get_db())
     

@@ -17,6 +17,10 @@ def get_veiculo(veiculo_id: int) -> Veiculo:
     
     return veiculo
 
+def get_veiculo_by_placa(placa: str) -> Veiculo:
+    db: Session = next(get_db())
+    return db.query(Veiculo).filter(Veiculo.placa == placa).first()
+
 def add_veiculo(modelo: str, marca: str, ano_fabricacao: int, placa: str, valor_diaria: Decimal, quilometragem_atual: int, disponivel: bool) -> Veiculo:
     db: Session = next(get_db())
     

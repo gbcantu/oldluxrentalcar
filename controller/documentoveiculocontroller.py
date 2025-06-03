@@ -119,3 +119,5 @@ def post_documentoveiculo_item(data: DocumentoveiculoRequestSchema) -> Documento
         return documentoveiculo
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
